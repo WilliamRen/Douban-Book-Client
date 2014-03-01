@@ -4,15 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
-/**
- * 
- * 
- * @author hao.wen <wenhao7704@gmail.com>
- * date: 2013-12-6 ÏÂÎç3:14:01
- *
- * ²Ù×÷SharedPreference
- * 
- */
+
 public class HandlePreference {
 
 	private Context mContext;

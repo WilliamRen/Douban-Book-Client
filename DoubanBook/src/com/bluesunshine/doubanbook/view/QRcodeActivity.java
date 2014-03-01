@@ -44,18 +44,18 @@ public class QRcodeActivity extends Activity {
 		codeImg=(ImageView)findViewById(R.id.codeImg);
 		
 		
-		//打开摄像头，扫描二维码
+
 		openCamera.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				//打开扫描界面扫描条形码或二维码  
+	
                 Intent openCameraIntent = new Intent(QRcodeActivity.this,CaptureActivity.class);  
                 startActivityForResult(openCameraIntent, 0); 
 			}			
 		});
 		
-		//生成二维码
+
 		genCode.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v) {
@@ -63,48 +63,33 @@ public class QRcodeActivity extends Activity {
 				String text=inputContent.getText().toString();
 				if(null!=text && !text.equals("")){
 					try {
-						// 实例化二维码对象  
+				
 			            QRCodeWriter writer = new QRCodeWriter();  
-			            // 用一个map保存编码类型  
+			
 			            Hashtable<EncodeHintType, String> hints = new Hashtable<EncodeHintType, String>();  
-			            // 保持字符集为“utf－8”  
+	
 			            hints.put(EncodeHintType.CHARACTER_SET, "utf-8");  
-			            /*  
-			             * 第一个参数：输入的文本 
-			             * 第二个参数：条形码样式－》二维码 
-			             * 第三个参数：宽度 
-			             * 第四个参数：高度 
-			             * 第五个参数：map保存编码类型 
-			             */			            
+		            
 						BitMatrix bitMatrix = writer.encode(text, BarcodeFormat.QR_CODE,  
 						        300, 300, hints);
-						// 将像素保存在数组里  
+
 			            int[] pixels = new int[300 * 300];  
 			            for (int y = 0; y < 300; y++) {  
 			                for (int x = 0; x < 300; x++) {  
-			                    if (bitMatrix.get(x, y)) {// 二维码黑点  
+			                    if (bitMatrix.get(x, y)) {
 			                        pixels[y * 300 + x] = 0xff000000;  
-			                    } else {// 二维码背景白色  
+			                    } else {
 			                        pixels[y * 300 + x] = 0xffffffff;  
 			                    }  
 			  
 			                }  
 			            } 
-			            // 生成位图  
+
 			            Bitmap bitmap = Bitmap.createBitmap(300, 300,  
 			                    Bitmap.Config.ARGB_8888); 
-			            /*  
-			             * 第一个参数：填充位图的像素数组 
-			             * 第二个参数：第一个颜色跳过几个像素读取 
-			             * 第三个参数：像素的幅度 
-			             * 第四个参数：起点x坐标 
-			             * 第五个参数：起点y坐标 
-			             * 第六个参数：宽 
-			             * 第七个参数：高 
-			             */  
+
 			            bitmap.setPixels(pixels, 0, 300, 0, 0, 300, 300);
 			            
-			            //设置图像
 			            codeImg.setImageBitmap(bitmap);
 			            
 					} catch (WriterException e) {
@@ -119,7 +104,7 @@ public class QRcodeActivity extends Activity {
 	@Override  
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {  
         super.onActivityResult(requestCode, resultCode, data);  
-        //处理扫描结果（在界面上显示）  
+
         if (resultCode == RESULT_OK) {  
             Bundle bundle = data.getExtras();  
             String result = bundle.getString("result");  

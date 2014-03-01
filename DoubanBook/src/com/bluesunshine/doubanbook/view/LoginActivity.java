@@ -15,6 +15,14 @@ import com.dongxuexidu.douban4j.model.app.RequestGrantScope;
 import com.dongxuexidu.douban4j.provider.OAuthDoubanProvider;
 import com.dongxuexidu.douban4j.provider.WebViewLauncher;
 
+
+/**
+ * 
+ * @author wenhao  <wenhao@leochin.com>
+ * 
+ * Mar 1, 2014  9:51:35 AM
+ *
+ */
 public class LoginActivity extends Activity {
 	
 	private Button button;
@@ -39,12 +47,7 @@ public class LoginActivity extends Activity {
 		});
 	}
 	
-	/**
-	 * 
-	 * 判断用户是否已经登录
-	 * 
-	 * @author hao.wen <wenhao7704@gmail.com>
-	 */
+
 	private void checkLoginStatus(){
 		
 		HandlePreference hp = new HandlePreference(this, Defs.USER_SHARED_PREFERENCE);
@@ -60,11 +63,7 @@ public class LoginActivity extends Activity {
 		}		
 	}
 
-	/**
-	 * 引导至WebView的Oauth认证界面
-	 * 
-	 * @author hao.wen <wenhao7704@gmail.com>
-	 */
+
 	private void initDoubanOauth() {
 
 		mOauth = new OAuthDoubanProvider();
