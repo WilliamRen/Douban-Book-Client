@@ -7,13 +7,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.bluesunshine.douban4droid.api.DoubanUsersAPI;
+import com.bluesunshine.douban4droid.model.app.AccessToken;
+import com.bluesunshine.douban4droid.model.app.DoubanException;
+import com.bluesunshine.douban4droid.utils.Converters;
+import com.bluesunshine.douban4droid.utils.RequestListener;
 import com.bluesunshine.doubanbook.R;
 import com.bluesunshine.doubanbook.sys.Defs;
-import com.dongxuexidu.douban4j.api.DoubanUsersAPI;
-import com.dongxuexidu.douban4j.model.app.AccessToken;
-import com.dongxuexidu.douban4j.model.app.DoubanException;
-import com.dongxuexidu.douban4j.utils.Converters;
-import com.dongxuexidu.douban4j.utils.RequestListener;
+
 
 public class MainActivity extends Activity {
 

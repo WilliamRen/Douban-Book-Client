@@ -7,13 +7,15 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+import com.bluesunshine.douban4droid.constants.DefaultConfigs;
+import com.bluesunshine.douban4droid.model.app.RequestGrantScope;
+import com.bluesunshine.douban4droid.provider.OAuthDoubanProvider;
+import com.bluesunshine.douban4droid.provider.WebViewLauncher;
 import com.bluesunshine.doubanbook.R;
 import com.bluesunshine.doubanbook.sys.Defs;
 import com.bluesunshine.doubanbook.utils.HandlePreference;
-import com.dongxuexidu.douban4j.constants.DefaultConfigs;
-import com.dongxuexidu.douban4j.model.app.RequestGrantScope;
-import com.dongxuexidu.douban4j.provider.OAuthDoubanProvider;
-import com.dongxuexidu.douban4j.provider.WebViewLauncher;
+
+
 
 
 /**
