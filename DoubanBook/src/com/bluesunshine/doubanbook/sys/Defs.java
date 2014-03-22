@@ -2,8 +2,6 @@ package com.bluesunshine.doubanbook.sys;
 
 public class Defs {
 	
-	
-	
 	/*
 	 * SharedPreference常量
 	 */
